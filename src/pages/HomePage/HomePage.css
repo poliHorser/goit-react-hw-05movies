@@ -1,0 +1,12 @@
+.trend-div{
+    padding: 15px;
+    background-color: rgb(194, 191, 191);
+    border-radius: 20px;
+}
+
+.trend-title{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
