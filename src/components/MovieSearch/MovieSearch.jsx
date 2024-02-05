@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -25,13 +24,16 @@ const MovieSearch = () => {
         const fetchMovies = async () => {
             try {
             setLoading(true);
-            const { data } = await fetchSearch(search, page);
-            const newMovies = data.results?.length ? [...movies, ...data.results] : movies;
+              const { data } = await fetchSearch(search, page);
+               setMovies(prevMovies =>
+            data.results?.length ? [...prevMovies, ...data.results] : prevMovies
+            );
+            //   const newMovies = data.results?.length ? [...prevMovies, ...data.results] : prevMovies;
 
-            // Сортування за назвою фільму в алфавітному порядку
-            const sortedMovies = newMovies.sort((a, b) => a.title.localeCompare(b.title));
+            // // Сортування за назвою фільму в алфавітному порядку
+            // const sortedMovies = newMovies.sort((a, b) => a.title.localeCompare(b.title));
 
-            setMovies(sortedMovies);
+            // setMovies(sortedMovies);
             } catch (error) {
             setError(error.message);
             } finally {
@@ -42,7 +44,7 @@ const MovieSearch = () => {
         if (search && (page === '1' || !page)) {
             fetchMovies();
         }
-    }, [search, page, movies]);
+    }, [search, page]);
 
 
     const handleSearch = ({ search }) => {
@@ -54,18 +56,14 @@ const MovieSearch = () => {
     
 
     const isMovies = Boolean(movies.length);        
-    // const NoREsult = movies.length === 0
+  
 
     return (
         <div className='search'>
         <MoviesSearchForm onSubmit={handleSearch} />
         {error && <p>{error}</p>}
         {loading && <p>...Loading page</p>}
-           {isMovies && (
-        <MoviesList items={movies} />
-        )}
-           {/* {NoREsult &&( <p>No results</p>)} */}
-        
+            {isMovies && <MoviesList items={movies} />}
              {/* {isMovies && (
         <div >
           <Button onClick={loadMore} type="button">
