@@ -42,7 +42,7 @@ const MovieSearch = () => {
         if (search && (page === '1' || !page)) {
             fetchMovies();
         }
-    }, [search, page]);
+    }, [search, page, movies]);
 
 
     const handleSearch = ({ search }) => {
