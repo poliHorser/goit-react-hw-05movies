@@ -1,0 +1,19 @@
+.review-div{
+    margin-top: 15px;
+    padding: 20px;
+    background-color: rgb(155, 155, 155);
+    border-radius: 20px;
+}
+
+.reviews-ul{
+    list-style: none;
+}
+
+.reviews-title{
+    color: rgb(237, 235, 235);
+    font-size: 30px;
+}
+.reviews-p{
+    color: black;
+    font-size: 20px;
+}

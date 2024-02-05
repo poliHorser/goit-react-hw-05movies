@@ -1,0 +1,56 @@
+.details{
+    background-color: rgb(194, 191, 191);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.details-btn{
+    font-size: 20px;
+    border-radius: 20px;
+    height: 50px;
+    width: 150px;
+    color: white;
+    background-color: grey;
+}
+
+.information{
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgb(175, 173, 173);
+}
+
+.det-img{
+    border-radius: 20px;
+    height: 600px;
+    width: 500px;
+}
+
+.det-title{
+    font-style: italic;
+    font-weight: 40px;
+    color: white;
+
+}
+
+.det-score{
+    font-size: 30px;
+    color: rgb(237, 235, 235);
+}
+
+.det-p{
+    font-size: 20px;
+    color: black;
+}
+
+.add-ul{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    list-style: none;
+}
+
+.det-li{
+    text-decoration: none;
+    color: white;
+}
